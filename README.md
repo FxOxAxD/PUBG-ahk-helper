@@ -4,7 +4,7 @@ Some ahk scripts to make PLAYERUNKNOWN'S BATTLEGROUNDS more confortable to play.
 ADS (Fast Aiming), CrouchJump, AutoFire and Compensation.
 
 # INFO
-This script was not developed for cheating, but for make it more confortable, maybe you'll have a little advantage.
+This script was not developed for cheating, but for make it more confortable, although you'll have a little advantage.
 ...anyway I love coding.
 
 You need Auto Hotkey to run this script, you can download it from https://autohotkey.com/download/
