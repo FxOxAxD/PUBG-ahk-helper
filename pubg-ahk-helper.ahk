@@ -145,25 +145,6 @@ ToolTip(Text) ; Function to show a tooltip when activating, deactivating or chan
   Return
 }
 
-/*
-ToolTip(Text, Color) {
-  activeMonitorInfo(X, Y, Width, Height) ; Get current resolution
-  xPos := Width / 2 - 30
-  yPos := Height / 2 + (Height / 10)
-;SoundPlay, *64  ; Simple beep. If the sound card is not available, the sound is generated using the speaker.
-  CustomColor = EEAA99
-  Gui +LastFound +AlwaysOnTop -Caption +ToolWindow
-  Gui, Color, %CustomColor%
-  Gui, Font, s16, Arial
-  Gui, Add, Text, c%Color% , %Text%
-  WinSet, TransColor, %CustomColor%
-  Gui, Show, x%xPos% y%yPos% NoActivate
-  Sleep, 600
-  Gui, Destroy
-  Return
-}
-*/
-
 ;####################################
 ;#     Hotkeys to change values     #
 ;####################################
