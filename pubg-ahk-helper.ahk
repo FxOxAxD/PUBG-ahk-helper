@@ -1,6 +1,6 @@
 
-; PUBG Helper by FxOxAxD [Ver: 0.94]
-ToolTip("PUBG Helper by FxOxAxD [Ver: 0.94]")
+; PUBG Helper by FxOxAxD [Ver: 0.95]
+ToolTip("PUBG Helper by FxOxAxD [Ver: 0.95]")
 
 ;#########################
 ;#     Configuration     #
@@ -18,7 +18,7 @@ isMouseShown() ; To suspend script when mouse is visible.
 ADS = 0 ; Var for fast aiming.
 CrouchJump = 1 ; Var for crouch when jumping.
 AutoFire = 0 ; Var for autofiring.
-Compensation = 0 ; Var for compensation when autofiring.
+Compensation = 1 ; Var for compensation when autofiring.
 compVal = 8 ; Compensation value. (Default: 8, optimal for short/mid range)
 
 ;########################################
@@ -53,12 +53,13 @@ Loop
 ;#     Fast Aiming     #
 ;#######################
 
-*RButton:: ; Fast Aiming [default: Right Button]
+*RButton:: ; Fast Aiming
 if ADS = 1
 { ; If enabled, clicks once and clicks again when button is released.
   SendInput {RButton}
+  SendInput {RButton Down}
   KeyWait, RButton
-  SendInput {RButton}
+  SendInput {RButton Up}
 } else { ; If not, just keeps holding until button is released.
   SendInput {RButton Down}
   KeyWait, RButton
@@ -133,7 +134,7 @@ mouseXY(x,y) ; Moves the mouse down to compensate recoil (value in compVal var).
 ToolTip(Text) ; Function to show a tooltip when activating, deactivating or changing values.
 {
   activeMonitorInfo(X, Y, Width, Height) ; Get current resolution
-  xPos := Width / 2 - 30
+  xPos := Width / 2 - 50
   yPos := Height / 2 + (Height / 10)
 
   ToolTip, %Text%, xPos, yPos ; Tooltips are shown under crosshair.
@@ -144,6 +145,25 @@ ToolTip(Text) ; Function to show a tooltip when activating, deactivating or chan
   ToolTip
   Return
 }
+
+/*
+ToolTip(Text, Color) {
+  activeMonitorInfo(X, Y, Width, Height) ; Get current resolution
+  xPos := Width / 2 - 30
+  yPos := Height / 2 + (Height / 10)
+;SoundPlay, *64  ; Simple beep. If the sound card is not available, the sound is generated using the speaker.
+  CustomColor = EEAA99
+  Gui +LastFound +AlwaysOnTop -Caption +ToolWindow
+  Gui, Color, %CustomColor%
+  Gui, Font, s16, Arial
+  Gui, Add, Text, c%Color% , %Text%
+  WinSet, TransColor, %CustomColor%
+  Gui, Show, x%xPos% y%yPos% NoActivate
+  Sleep, 600
+  Gui, Destroy
+  Return
+}
+*/
 
 ;####################################
 ;#     Hotkeys to change values     #
