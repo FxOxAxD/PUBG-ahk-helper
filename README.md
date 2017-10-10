@@ -1,8 +1,71 @@
-# PUBG-ahk-helper
+# PUBG-ahk-helper [Current Version: 0.94]
 Some ahk scripts to make PLAYERUNKNOWN'S BATTLEGROUNDS more confortable to play.
-
-You need Auto Hotkey to run this script.
 
 ADS (Fast Aiming), CrouchJump, AutoFire and Compensation.
 
-Credits: AutoFire script is made by TheRagingWampa.
+# INFO
+This script was not developed for cheating, but for make it more confortable, maybe you'll have a little advantage.
+...anyway I love coding.
+
+You need Auto Hotkey to run this script, you can download it from https://autohotkey.com/download/
+Once installed, download pubg-ahk-helper.ahk and you should be able to run it.
+
+Please set Screen Mode to Fullscreen or Windowed Fullscreen.
+
+It'll show you a tooltip under your crosshair whenever you enable/disable or change a value of a module.
+Tooltips are working for all resolutions.
+
+You can toggle Pause/Play script with Pause Button (Yes, there is a button for that)
+Although it only works if PUBG is your active window and the cursor is not visible (e.g. inventory, map... so you can drag items, mark locations, etc)
+
+
+# ADS (Fast Aiming)
+You'll be able to aim from the ads while holding right click instead of clicking twice.
+If enabled, clicks once and clicks again when button is released.
+If not, just keeps holding until button is released.
+[Toggle: Mouse 5 Button]
+
+# Crouch Jump
+Crouch jumping, aka super jump, before you had to press Space and C exactly at the same time, that makes it quite difficult...
+With this script you can jump normally with single Space press, and super jump if you press and hold Space.
+So, single press = normal jump, hold space = super jump.
+Also keeps crouching 0.5 seconds to improve the jump.
+This will be useful at least until vaulting is released.
+[Toggle: NumPad 0]
+
+# AutoFire
+It'll allow you to shot in Full Auto mode for all semi automatic weapons (e.g. M16, SKS, Mini-14 and Pistols)
+Only works while holding aim (holding right click) so you'll be able to throw grenades.
+[Toggle: BloqMayus]
+
+# Compensation
+Moves the mouse down to compensate recoil, by default is set to 8, which is optimal for short/mid range.
+Also it only works while holding aim, to allow you throw grenades properly.
+[Toggle: NumPad Dot]
+[Adds Compensation: NumPad +]
+[Substracts Compensation: NumPad -]
+
+# Credits
+Thanks to TheRagingWampa for AutoFire Script
+
+# Changelog
+v0.94:
+Improved CrouchJump (single space press to jump, keep holding to crouchjump)
+
+v0.90:
+Added Suspend toggle
+Improved ToolTips (all resolutions are now available)
+Improved Toggles
+Fixed problem when throwing grenades
+
+v0.82:
+Added ToolTips under crosshair
+Improved AutoFire module (compensation no longer needs to be called inside autofire)
+
+v0.80:
+First Release
+Added ADS module
+Added CrouchJump module
+Added AutoFire module
+Added Compensation module
+Added toggles to enable/disable modules
