@@ -49,6 +49,9 @@ Also it only works while holding aim, to allow you throw grenades properly.
 Thanks to TheRagingWampa for AutoFire Script
 
 # Changelog
+V0.95:
+Fixed AutoFire issue when ADS is enabled.
+
 v0.94:
 Improved CrouchJump (single space press to jump, keep holding to crouchjump)
 
