@@ -1,5 +1,5 @@
 
-; PUBG Helper by FxOxAxD [Ver: 0.80]
+; PUBG Helper by FxOxAxD [Ver: 0.94]
 ToolTip("PUBG Helper by FxOxAxD [Ver: 0.94]")
 
 ;#########################
