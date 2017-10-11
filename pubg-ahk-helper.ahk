@@ -1,10 +1,10 @@
-
-; PUBG Helper by FxOxAxD [Ver: 0.95]
-ToolTip("PUBG Helper by FxOxAxD [Ver: 0.95]")
+; PUBG Helper by FxOxAxD [Ver: 1.00]
+ToolTip("PUBG Helper by FxOxAxD [Ver: 1.00]")
 
 ;#########################
 ;#     Configuration     #
 ;#########################
+
 #NoEnv ; Improves performance and compatibility with future AHK updates.
 #SingleInstance force ; It allows to run only one at the same time.
 SetTitleMatchMode, 2 ; Matching for window title.
@@ -13,18 +13,19 @@ SetTitleMatchMode, 2 ; Matching for window title.
 ;#####################
 ;#     Variables     #
 ;#####################
+
 isMouseShown() ; To suspend script when mouse is visible.
+wantsRbeforeL = 1 ; If wants to be aiming before autofire or compensate (good for throwing grenades properly).
 
 ADS = 0 ; Var for fast aiming.
 CrouchJump = 1 ; Var for crouch when jumping.
 AutoFire = 0 ; Var for autofiring.
 Compensation = 1 ; Var for compensation when autofiring.
-compVal = 8 ; Compensation value. (Default: 8, optimal for short/mid range)
+compVal = 6 ; Compensation value. (Default: 8, optimal for short/mid range)
 
 ;########################################
 ;#     Suspends if mouse is visible     #
 ;########################################
-
 
 isMouseShown() ; It suspends the script when mouse is visible (map, inventory, menu).
 {
@@ -48,7 +49,6 @@ Loop
     Sleep 1
 }
 
-
 ;#######################
 ;#     Fast Aiming     #
 ;#######################
@@ -70,27 +70,35 @@ Return
 ;######################
 ;#     CrouchJump     #
 ;######################
+
 *$Space::
 if CrouchJump = 1
 {
   KeyWait, Space, T0.08
   If ErrorLevel = 1  ; If Space is holding then jumps and crouch.
   {
-    SendInput {Space}{c down}
+    SendInput {Space down}{c down}
     Sleep 500 ; And keeps crouching 0.5 seconds to improve the jump.
     SendInput {c up}
+    SendInput {Space} ; To fix keep crouching.
+    SendInput {Space down} ; Needed to be able to swim up.
+    KeyWait, Space
+    SendInput {Space up}
   } else { ; Else just jumps.
     SendInput {Space}
   }
 } else
-  SendInput {Space}
+  SendInput {Space down}
+  KeyWait, Space
+  SendInput {Space up}
 Return
 
 ;####################
 ;#     AutoFire     #
 ;####################
+
 ~$*LButton:: ; AutoFire
-If GetKeyState("RButton") ; Only works while holding aim (so you'll be able to throw grenades)
+If (GetKeyState("RButton") || wantsRbeforeL != 1) ; Only works while holding aim (so you'll be able to throw grenades)
 {
   if (AutoFire = 1 || Compensation = 1)
   {
@@ -105,7 +113,7 @@ If GetKeyState("RButton") ; Only works while holding aim (so you'll be able to t
           if Compensation = 1 ; If enabled, call to Compensation.
             mouseXY(0, compVal)
         ; Gosub, RandomSleep ; Call to RandomSleep. (Currently unstable)
-        Sleep 25
+        Sleep 20
       }
   }
 }
@@ -114,9 +122,6 @@ RandomSleep: ; Random timing between clicks, just in case.
   Random, random, 14, 25
   Sleep %random%-5
 Return
-
-
-
 
 ;########################
 ;#     Compensation     #
@@ -145,25 +150,6 @@ ToolTip(Text) ; Function to show a tooltip when activating, deactivating or chan
   ToolTip
   Return
 }
-
-/*
-ToolTip(Text, Color) {
-  activeMonitorInfo(X, Y, Width, Height) ; Get current resolution
-  xPos := Width / 2 - 30
-  yPos := Height / 2 + (Height / 10)
-;SoundPlay, *64  ; Simple beep. If the sound card is not available, the sound is generated using the speaker.
-  CustomColor = EEAA99
-  Gui +LastFound +AlwaysOnTop -Caption +ToolWindow
-  Gui, Color, %CustomColor%
-  Gui, Font, s16, Arial
-  Gui, Add, Text, c%Color% , %Text%
-  WinSet, TransColor, %CustomColor%
-  Gui, Show, x%xPos% y%yPos% NoActivate
-  Sleep, 600
-  Gui, Destroy
-  Return
-}
-*/
 
 ;####################################
 ;#     Hotkeys to change values     #
