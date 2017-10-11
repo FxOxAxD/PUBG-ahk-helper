@@ -36,7 +36,7 @@ This will be useful at least until vaulting is released.
 # AutoFire
 It'll allow you to shot in Full Auto mode for all semi automatic weapons (e.g. M16, SKS, Mini-14 and Pistols)  
 Only works while holding aim (holding right click) so you'll be able to throw grenades.  
-[Toggle: BloqMayus]
+[Toggle: CapsLock]
 
 # Compensation
 Moves the mouse down to compensate recoil, by default is set to 8, which is optimal for short/mid range.  
