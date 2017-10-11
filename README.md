@@ -1,4 +1,4 @@
-# PUBG-ahk-helper [Current Version: 0.95]
+# PUBG-ahk-helper [Current Version: 1.00]
 Some ahk scripts to make PLAYERUNKNOWN'S BATTLEGROUNDS more confortable to play.
 
 ADS (Fast Aiming), CrouchJump, AutoFire and Compensation.
