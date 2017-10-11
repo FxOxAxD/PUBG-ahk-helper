@@ -35,12 +35,10 @@ This will be useful at least until vaulting is released.
 
 # AutoFire
 It'll allow you to shot in Full Auto mode for all semi automatic weapons (e.g. M16, SKS, Mini-14 and Pistols)  
-Only works while holding aim (holding right click) so you'll be able to throw grenades.  
 [Toggle: CapsLock]
 
 # Compensation
 Moves the mouse down to compensate recoil, by default is set to 8, which is optimal for short/mid range.  
-Also it only works while holding aim, to allow you throw grenades properly.  
 [Toggle: NumPad Dot]  
 [Adds Compensation: NumPad +]  
 [Substracts Compensation: NumPad -]  
@@ -50,7 +48,7 @@ Thanks to TheRagingWampa for AutoFire Script
 
 # Changelog
 v1.00:  
-Added possibility of deciding if wants to be aiming before autofire or compensate.  
+Added possibility of deciding if wants to be aiming before autofire or compensation.  
 Fixed an issue when crouch jumping keeps crouching.  
 Fixed issue you was not able to swim up if crouchjump was enabled.
 
