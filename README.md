@@ -49,7 +49,12 @@ Also it only works while holding aim, to allow you throw grenades properly.
 Thanks to TheRagingWampa for AutoFire Script
 
 # Changelog
-V0.95:  
+v1.00:  
+Added possibility of deciding if wants to be aiming before autofire or compensate.  
+Fixed an issue when crouch jumping keeps crouching.  
+Fixed issue you was not able to swim up if crouchjump was enabled.
+
+v0.95:  
 Fixed AutoFire issue when ADS is enabled.
 
 v0.94:  
