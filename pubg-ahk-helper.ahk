@@ -15,7 +15,7 @@ SetTitleMatchMode, 2 ; Matching for window title.
 ;#####################
 
 isMouseShown() ; To suspend script when mouse is visible.
-wantsRbeforeL = 1 ; If wants to be aiming before autofire or compensate (good for throwing grenades properly).
+wantsRbeforeL = 1 ; If wants to be aiming before autofire or compensation (good for throwing grenades properly).
 
 ADS = 0 ; Var for fast aiming.
 CrouchJump = 1 ; Var for crouch when jumping.
