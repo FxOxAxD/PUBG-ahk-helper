@@ -10,7 +10,7 @@ This script was not developed for cheating, but for make it more confortable, al
 You need Auto Hotkey to run this script, you can download it from https://autohotkey.com/download/  
 Once installed, download pubg-ahk-helper.ahk and you should be able to run it.
 
-Please set Screen Mode to Fullscreen or Windowed Fullscreen.
+Please set Screen Mode to Window or Windowed Fullscreen, it wont work on FullScreen.
 
 It'll show you a tooltip under your crosshair whenever you enable/disable or change a value of a module.  
 Tooltips are working for all resolutions.
