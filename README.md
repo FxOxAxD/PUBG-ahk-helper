@@ -1,3 +1,5 @@
+THIS PROJECT IS NO LONGER SUPPORTED AS YOU CAN GET BANNED FROM PUBG.
+
 # PUBG-ahk-helper [Current Version: 1.00]
 Some ahk scripts to make PLAYERUNKNOWN'S BATTLEGROUNDS more confortable to play.
 
